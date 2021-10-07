@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My APP</title>
+</head>
+
+<body>
+    <h1>TODO APP</h1>
+    <form action="/todo" method="POST">
+        <input type="text" placeholder="name" name="name">
+        <input type="text" placeholder="quote" name="description">
+        <button type="submit">Submit</button>
+    </form>
+    <h2> TODO LIST: </h2>
+    <ul class="quotes">
+        <!-- Loop through quotes -->
+        <% for(var i=0; i < quotes.length; i++) {%>
+            <li class="quote">
+                <span>
+                    <%= quotes[i].name %>
+                </span>:
+                <span>
+                    <%= quotes[i].description %>
+                </span>
+            </li>
+            <% } %>
+    </ul>
+
+    <div>
+        <h3>Cambiamos la primera accion de la lista todo</h3>
+        <button id="update-button">Cambiar primera cosa</button>
+    </div>
+    <div id="message"></div>
+    <div>
+        <h3>Elimina la primera tarea</h3>
+        <button id="delete-button">eliminar tarea</button>
+    </div>
+    <script src="/main.js"></script>
+</body>
+
+</html>
